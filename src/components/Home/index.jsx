@@ -8,6 +8,7 @@ const Home = () => {
                <Header/>
                 <div className="home-content-container">
                   <Link to="/dashboard" className="nav-link"> <p className="home-link">Go To Dashboard</p> </Link>
+                   
                 </div>
         </div>
         
