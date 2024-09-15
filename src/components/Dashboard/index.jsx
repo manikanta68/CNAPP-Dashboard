@@ -180,8 +180,8 @@ const Dashboard = () => {
                     <div>
                         <p>CSPM Exicutive Dashboard</p>
                         <ul className="ul-cards-container">
-                            {filterList.filter((each) => each.catogory === "cspm").map((each, index) =>
-                                <ExicutiveDashBoard key={each.id} passData={setFilterList} each={each} filterList={filterList}/>
+                            {filterList.filter((each) => each.catogory === "cspm").map((each) =>
+                                <ExicutiveDashBoard key={each.id} passData={setDataList} each={each} filterList={filterList}/>
                             )}
                             <li className="last-card">
                                 <button type="button" className="card-add-widget" onClick={onAddWidget}>  <FaPlus /> Add Widget  </button>
@@ -193,7 +193,7 @@ const Dashboard = () => {
                         <p>CWPP Dashboard</p>
                         <ul className="ul-cards-container">
                             {filterList.filter((each) => each.catogory === "cwpp").map((each) =>
-                                <CwppDashboard key={each.id} passData={setFilterList} each={each} filterList={filterList} />
+                                <CwppDashboard key={each.id} passData={setDataList} each={each} filterList={filterList} />
                             )}
                             <li className="last-card">
                                 <button type="button" className="card-add-widget" onClick={onAddWidget}>  <FaPlus /> Add Widget  </button>
@@ -205,7 +205,7 @@ const Dashboard = () => {
                         <p>Registry Scan</p>
                         <ul className="ul-cards-container">
                             {filterList.filter((each) => each.catogory === "image").map((each) =>
-                                <RegistryScan key={each.id} passData={setFilterList} each={each}  filterList={filterList}/>
+                                <RegistryScan key={each.id} passData={setDataList} each={each}  filterList={filterList}/>
                             )}
                             <li className="last-card">
                                 <button type="button" className="card-add-widget" onClick={onAddWidget}>  <FaPlus /> Add Widget  </button>
@@ -228,15 +228,14 @@ const Dashboard = () => {
                             </div>
                             <ul className="active-tabs-container">
 
-                                {dataList.filter((each) => each.catogory === activeTab).map((each, id) => <li key={id} className="active-tab-items"> <input value={each.check} checked={each.check} onChange={(event) => {
-                                    console.log(event.target.value)
-                                    const newList = dataList.map((item) => {
+                                {filterList.filter((each) => each.catogory === activeTab).map((each, id) => <li key={id} className="active-tab-items"> <input value={each.check} checked={each.check} onChange={(event) => {
+                                    const newList = filterList.map((item) => {
                                         if (item.id === each.id) {
                                             return { ...item, check: !item.check }
                                         }
                                         return item
                                     })
-                                    setDataList(newList)
+                                    setFilterList(newList)
                                 }} type="checkbox" /> <p>{each.name}</p></li>)}
 
                             </ul>
@@ -255,7 +254,13 @@ const Dashboard = () => {
                                 <button type="submit" className="add-button">Add</button>
                             </form>
                         </div>
-                        <div className="siderbar-footer"><button className="cancel" type="button" onClick={() => setPopup(false)}>Cancel</button> <button className="confirm" type="button">Confirm</button></div>
+                        <div className="siderbar-footer"><button className="cancel" type="button" onClick={() => setPopup(false)}>Cancel</button> <button className="confirm" type="button" onClick={() => {
+                            localStorage.clear()
+                            const List = filterList.filter((each) => each.check === true)
+                            console.log(List)
+                            setDataList(List)
+                        
+                        }}>Confirm</button></div>
                     </div>
                 </div>}
             </div>

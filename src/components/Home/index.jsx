@@ -7,7 +7,7 @@ const Home = () => {
         <div>
                <Header/>
                 <div className="home-content-container">
-                  <Link to="/dashboard" className="nav-link"> <p className="home-link">Go To Dashboard</p> </Link>
+                  <Link to="/dashboard" className="nav-link"> <p className="home-link">Please Go To Dashboard</p> </Link>
                    
                 </div>
         </div>

@@ -10,7 +10,10 @@ const DashBoardNavbar = (props) => {
                     <p className="dashboard-heading">CNAPP DASHBOARD</p>
                     <div className="dashboard-navbar-options">
                         <button type="button" className="add-widget" onClick={() => passData(true)}>Add Widget  <FaPlus /> </button>
-                        <button type="button" className="sync-button"><MdSync /></button>
+                        <button type="button" className="sync-button" onClick={() =>{
+                            localStorage.clear()
+                        
+                        } }><MdSync /></button>
                         <button type="button" className="threedots-button"><BsThreeDotsVertical /></button>
                         <div className="clock-container">
                             <div className="clock-border">

@@ -11,7 +11,6 @@ const ExicutiveDashBoard = ({each,passData,filterList}) => {
                 <p>{each.name} </p>
                 <button type="button" className="card-remove-button" onClick={() => {
                     const newList = filterList.filter((item) => item.id !== each.id)
-                    console.log("aaa")
                     passData(newList)
                 }}><BsXLg /></button>
             </div>
