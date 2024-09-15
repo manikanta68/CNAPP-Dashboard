@@ -54,4 +54,19 @@
 
 ### Third-party packages
 
-    React-Router, react-Icons, 
+    React-Router, react-Icons, react-recharts, uuid, vite
+
+
+### Installation Setup
+
+    I am build this Website using Vite build Tool ,
+    1. npm create vite@latest 
+    2. npx degit user/project#main my-project
+       cd my-project
+
+       npm install
+       npm run dev
+    3. npm i react-router-dom
+    4. npm i react-icons
+    5. npm i react-recharts
+    6. npm i uuid

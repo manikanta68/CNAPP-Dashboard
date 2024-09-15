@@ -1,0 +1,29 @@
+.each-card{
+    width: 350px;
+    height: 200px;
+    list-style-type: none;
+    background-color: white;
+    border-radius: 5px;
+    padding: 6px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    flex-grow: 1;
+}
+.card-remove-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+}
+.card-remove-button{
+    background-color: transparent;
+    border: none;
+
+}
+.graph-data-container{
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
