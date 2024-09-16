@@ -3,15 +3,15 @@ import { FaPlus } from "react-icons/fa6";
 import { BsThreeDotsVertical, BsClockFill} from "react-icons/bs";
 import "./index.css"
 
-const DashBoardNavbar = (props) => {
-    const {passData} = props
+const DashBoardNavbar = ({handler}) => {
+    
     return (
         <div className="dashboard-navbar">
                     <p className="dashboard-heading">CNAPP DASHBOARD</p>
                     <div className="dashboard-navbar-options">
                         <button type="button" className="add-widget" onClick={() => passData(true)}>Add Widget  <FaPlus /> </button>
                         <button type="button" className="sync-button" onClick={() =>{
-                            localStorage.clear()
+                            handler()
                         
                         } }><MdSync /></button>
                         <button type="button" className="threedots-button"><BsThreeDotsVertical /></button>

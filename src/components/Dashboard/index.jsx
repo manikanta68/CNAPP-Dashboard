@@ -169,13 +169,17 @@ const Dashboard = () => {
         setWidText("")
 
     }
-
+    
+   const onSyncChange = () => {
+          localStorage.clear()
+          setDataList(CnappDashboard)
+    }
 
     return (
         <div>
             <Header userInputFunction={setUserInput} />
             <div className="dashboard-content">
-                <DashBoardNavbar passData={setPopup} />
+                <DashBoardNavbar handler={onSyncChange} />
                 <div className="main">
                     <div>
                         <p>CSPM Exicutive Dashboard</p>
@@ -257,7 +261,6 @@ const Dashboard = () => {
                         <div className="siderbar-footer"><button className="cancel" type="button" onClick={() => setPopup(false)}>Cancel</button> <button className="confirm" type="button" onClick={() => {
                             localStorage.clear()
                             const List = filterList.filter((each) => each.check === true)
-                            console.log(List)
                             setDataList(List)
                         
                         }}>Confirm</button></div>
