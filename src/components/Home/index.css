@@ -15,4 +15,9 @@
 .home-link{
     font-size: 25px;
     font-family: "Roboto";
+    border: none;
+    padding: 15px;
+    background-color: orange;
+    border-radius: 5px;
+    color: white;
 }

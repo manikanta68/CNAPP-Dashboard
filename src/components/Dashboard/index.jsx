@@ -163,8 +163,11 @@ const Dashboard = () => {
                 count: 1665,
             }
         }
-        setDataList((prev) => [...prev,newWidget])
-        setFilterList((prev) => [...prev,newWidget])
+        if(widName.length > 0 && widText.length > 0){
+            setDataList((prev) => [...prev,newWidget])
+            setFilterList((prev) => [...prev,newWidget])   
+        }
+        
         setWidName("")
         setWidText("")
 
@@ -179,7 +182,7 @@ const Dashboard = () => {
         <div>
             <Header userInputFunction={setUserInput} />
             <div className="dashboard-content">
-                <DashBoardNavbar handler={onSyncChange} />
+                <DashBoardNavbar handler={onSyncChange} onAddWidget={onAddWidget} />
                 <div className="main">
                     <div>
                         <p>CSPM Exicutive Dashboard</p>
